@@ -148,4 +148,39 @@ describe Game do
 			expect(g5.score).to eq(24)
 		end
 	end
+			describe "Bowling Game Kata" do
+		it 'can roll the given example' do
+			g6 = Game.new
+			#frame1
+			g6.roll(1)
+			g6.roll(4)
+			#frame2
+			g6.roll(4)
+			g6.roll(5)
+			#frame3
+			g6.roll(6)
+			g6.roll(4) #spare
+			#frame4
+			g6.roll(5)
+			g6.roll(5) #spare
+			#frame5
+			g6.roll(10) #strike
+			#frame6
+			g6.roll(0)
+			g6.roll(1)
+			#frame7
+			g6.roll(7)
+			g6.roll(3) #spare
+			#frame8
+			g6.roll(6)
+			g6.roll(4) #spare
+			#frame9
+			g6.roll(10) #strike
+			#frame10
+			g6.roll(2)
+			g6.roll(8) #strike
+			g6.roll(6) #row3
+			expect(g6.score).to eq(133)
+		end
+	end
 end
