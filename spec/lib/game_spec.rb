@@ -112,5 +112,40 @@ describe Game do
 			#no row3
 			expect(g4.score).to eq(111)
 		end
+		it 'can roll a simple game (no spare or strike)' do
+	    	g5 = Game.new
+			#frame1
+			g5.roll(1)
+			g5.roll(1) 
+			#frame2
+			g5.roll(0)
+			g5.roll(0)
+			#frame3
+			g5.roll(0)
+			g5.roll(2)
+			#frame4
+			g5.roll(1)
+			g5.roll(2)
+			#frame5
+			g5.roll(2)
+			g5.roll(0) 
+			#frame6
+			g5.roll(1)
+			g5.roll(0)
+			#frame7
+			g5.roll(1)
+			g5.roll(3)
+			#frame8
+			g5.roll(2)
+			g5.roll(2)
+			#frame9
+			g5.roll(1)
+			g5.roll(4) 
+			#frame10
+			g5.roll(0)
+			g5.roll(1)
+			#no row3
+			expect(g5.score).to eq(24)
+		end
 	end
 end
