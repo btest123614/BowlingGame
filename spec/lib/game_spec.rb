@@ -79,5 +79,38 @@ describe Game do
 		    g3.roll(2) #row3
 		    expect(g3.score).to eq(141)
 	    end
+	    it 'can roll no spare or strike at last frame (no row3)' do
+	    	g4 = Game.new
+			#frame1
+			g4.roll(5)
+			g4.roll(1) 
+			#frame2
+			g4.roll(3)
+			g4.roll(4)
+			#frame3
+			g4.roll(10) #strike
+			#frame4
+			g4.roll(5)
+			g4.roll(3)
+			#frame5
+			g4.roll(7)
+			g4.roll(3) #spare
+			#frame6
+			g4.roll(10) #strike
+			#frame7
+			g4.roll(8)
+			g4.roll(2) #spare
+			#frame8
+			g4.roll(2)
+			g4.roll(2)
+			#frame9
+			g4.roll(4)
+			g4.roll(6) #spare
+			#frame10
+			g4.roll(2)
+			g4.roll(2)
+			#no row3
+			expect(g4.score).to eq(111)
+		end
 	end
 end
