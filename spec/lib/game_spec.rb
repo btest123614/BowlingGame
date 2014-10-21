@@ -46,5 +46,38 @@ describe Game do
 		    g2.roll(5) #row3
 		    expect(g2.score).to eq(135)
 	    end
+	    it 'can roll a strike at last frame' do
+			g3 = Game.new
+		    #frame1
+		    g3.roll(4)
+		    g3.roll(1)
+		    #frame2
+		    g3.roll(3)
+		    g3.roll(2)
+		    #frame3
+		    g3.roll(4)
+		    g3.roll(6) #spare
+		    #frame4
+		    g3.roll(10) #strike
+		    #frame5
+		    g3.roll(5)
+		    g3.roll(5) #spare
+		    #frame6
+		    g3.roll(2)
+		    g3.roll(8) #spare
+		    #frame7
+		    g3.roll(2)
+		    g3.roll(1)
+		    #frame8
+		    g3.roll(2)
+		    g3.roll(8) #spare
+		    #frame9
+		    g3.roll(10)	#strike
+		    #frame10
+		    g3.roll(10) #strike
+		    g3.roll(6) 
+		    g3.roll(2) #row3
+		    expect(g3.score).to eq(141)
+	    end
 	end
 end
